@@ -6,7 +6,7 @@ try:
     db = pymysql.connect(
         host='127.0.0.1',
         user='root',
-        passwd='whwnsgh99*',
+        passwd='password*',
         db='chatbot',
         charset='utf8'
     )

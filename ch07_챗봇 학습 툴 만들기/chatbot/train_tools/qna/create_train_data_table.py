@@ -1,4 +1,5 @@
 import pymysql
+from config.DatabaseConfig import *
 
 db = None
 try:
@@ -10,17 +11,20 @@ try:
         db='chatbot',
         charset='utf8'
     )
-
+    
     # 테이블 생성 sql 정의
     sql = '''
-    CREATE TABLE tb_student (
-        id int primary key auto_increment not null,
-        name varchar(32),
-        age int,
-        address varchar(32)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+        CREATE TABLE IF NOT EXISTS `chatbot_train_data` (
+        `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+        `intent` VARCHAR(45) NULL, 
+        `ner` VARCHAR(1024) NULL, 
+        `query` TEXT NULL, 
+        `answer` TEXT NOT NULL, 
+        `answer_image` VARCHAR(2048) NULL, 
+        PRIMARY KEY(`id`))
+    ENGINE = InnoDB DEFAULT CHARSET=utf8
     '''
-
+    
     # 테이블 생성
     with db.cursor() as cursor:
         cursor.execute(sql)
