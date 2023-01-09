@@ -77,5 +77,36 @@ chatbot
         - ner    : `개체` 인식 모델 관련 파일
     - utils : 챗봇 개발에 필요한 `유틸리티 라이브러리`
     - config : 챗봇 개발에 필요한 `설정`
-    - test : 챗봇 개발에 필요한 `테스트 코드`
+    - test : 챗봇 개발에 필요한 `테스트 코드`  
+  
 
+`OpenPyXL`모듈을 사용하면 엑셀 파일을 읽어와 DB에 데이터를 저장할 수 있다.  
+```commandline
+    # 학습 엑셀 파일 불러오기
+    wb = openpyxl.load_workbook(train_file)
+    sheet = wb['Sheet1']
+    for now in sheet.iter_rows(min_row=2):
+        # 데이터 저장
+        insert_data(db, xls_row=)
+
+    wb.close()
+```  
+
+#### 7.3.2 당황스러운 오류
+여기까지 프로젝트의 구조와 파일들을 작성하면서 오류가 발생했다...  
+파이썬의 기초가 다져지지 않았다는 뜻인가..?  
+오류를 모르겠다ㅜㅜ  
+
+[파일 경로 오류]  
+```commandline
+from config.DatabaseConfig import *
+
+```  
+여기서 `config.Database`가 오류가 나는데, `config`에만 빨간 밑줄이 쳐진다.  
+실행해보면, *No module named 'config'*의 오류 코드가 나옴..  
+`pip install config`를 하라고 하지만 해도 안됨..  
+
+내 프로젝트 구조는 
+*user/myproject/chatbot/chatbot_example_code/ch07_챗봇 학습 툴 만들기/chatbot/config, model, test, train_tool, utils*  
+
+일단 코드는 작성해놓고 나중에 오류를 고쳐봐야겠다..  
