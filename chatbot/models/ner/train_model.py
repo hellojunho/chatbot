@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.keras import preprocessing
 from sklearn.model_selection import train_test_split
@@ -86,7 +85,7 @@ print("테스트 샘플 레이블 형상 : ", y_test.shape)
 
 # 모델 정의 (Bi-LSTM)
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional
+from tensorflow.keras.layers import LSTM, Embedding, Dense, TimeDistributed, Bidirectional
 from tensorflow.keras.optimizers import Adam
 
 model = Sequential()

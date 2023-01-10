@@ -4,7 +4,7 @@ import json
 from config.DatabaseConfig import *
 from utils.Database import Database
 from utils.BotServer import BotServer
-from utils.Preprocess import Preprocess
+from chatbot.chatbot_example_code.chatbot.utils.Preprocess import Preprocess
 from models.intent.IntentModel import IntentModel
 from models.ner.NerModel import NerModel
 from utils.FindAnswer import FindAnswer
