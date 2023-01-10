@@ -110,3 +110,4 @@ from config.DatabaseConfig import *
 *user/myproject/chatbot/chatbot_example_code/ch07_챗봇 학습 툴 만들기/chatbot/config, model, test, train_tool, utils*  
 
 일단 코드는 작성해놓고 나중에 오류를 고쳐봐야겠다..  
+
