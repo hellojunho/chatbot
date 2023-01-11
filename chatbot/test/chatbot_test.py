@@ -1,6 +1,6 @@
-from chatbot.chatbot_example_code.chatbot.config.DatabaseConfig import *
-from chatbot.chatbot_example_code.chatbot.utils.Database import Database
-from chatbot.chatbot_example_code.chatbot.utils.Preprocess import Preprocess
+from chatbot.config.DatabaseConfig import *
+from chatbot.utils.Database import Database
+from chatbot.utils.Preprocess import Preprocess
 
 # 전처리 객체 생성
 p = Preprocess(word2index_dic='../train_tools/dict/chatbot_dict.bin',

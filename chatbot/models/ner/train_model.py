@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras import preprocessing
 from sklearn.model_selection import train_test_split
 import numpy as np
-from chatbot.chatbot_example_code.chatbot.utils.Preprocess import Preprocess
+from chatbot.utils.Preprocess import Preprocess
 
 
 # 학습 파일 불러오기

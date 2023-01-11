@@ -1,7 +1,7 @@
 #
 # 챗봇에서 사용하는 사전 파일 생성
 #
-from chatbot.chatbot_example_code.chatbot.utils.Preprocess import Preprocess
+from chatbot.utils.Preprocess import Preprocess
 from tensorflow.keras import preprocessing
 import pickle
 

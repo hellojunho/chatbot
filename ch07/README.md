@@ -104,10 +104,21 @@ from config.DatabaseConfig import *
 ```  
 여기서 `config.Database`가 오류가 나는데, `config`에만 빨간 밑줄이 쳐진다.  
 실행해보면, *No module named 'config'*의 오류 코드가 나옴..  
-`pip install config`를 하라고 하지만 해도 안됨..  
+`pip install config`를 하라고 하지만 해도 안됨..
 
-내 프로젝트 구조는 
-*user/myproject/chatbot/chatbot_example_code/ch07_챗봇 학습 툴 만들기/chatbot/config, model, test, train_tool, utils*  
+내 프로젝트 구조는  
+```angular2html
+chatbot
+    - ch01 ~ ch12
+    - chatbot
+        - config
+        - models
+        - test
+        - train_tools
+        - utils
+```
 
-일단 코드는 작성해놓고 나중에 오류를 고쳐봐야겠다..  
-
+해결해버렸다!  
+`pip install config`가 아니고! 경로 문제였다...  
+내 프로젝트 구조는 `chatbot`이라는 최상위 폴더 아래에 `chatbot`폴더가 또 하나 있었고 이 폴더에 챗봇 프로젝트 코드가 들어있다.  
+그러니까! import하려면 `from chatbot.config.DatabaseConfig import *`처럼 해야한다.. ㅎ.ㅎ 파이썬 기초 화이팅!
