@@ -1,5 +1,5 @@
 import pickle
-from chatbot.utils.Preprocess import Preprocess
+from utils.Preprocess import Preprocess
 
 # 단어 사전 불러오기
 f = open("../train_tools/dict/chatbot_dict.bin", "rb")
@@ -22,3 +22,4 @@ for word in keywords:
     except KeyError:
         # 해당 단어가 사전에 없는 경우, OOV 처리
         print(word, word_index['OOV'])
+

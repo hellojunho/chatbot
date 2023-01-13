@@ -56,3 +56,4 @@ class Preprocess:
                 # 해당 단어가 사전에 없는 경우, OOV 처리
                 w2i.append(self.word_index['OOV'])
         return w2i
+

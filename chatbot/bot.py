@@ -4,7 +4,7 @@ import json
 from config.DatabaseConfig import *
 from utils.Database import Database
 from utils.BotServer import BotServer
-from chatbot.chatbot_example_code.chatbot.utils.Preprocess import Preprocess
+from utils.Preprocess import Preprocess
 from models.intent.IntentModel import IntentModel
 from models.ner.NerModel import NerModel
 from utils.FindAnswer import FindAnswer
@@ -89,8 +89,8 @@ if __name__ == '__main__':
     )
     print("DB 접속")
 
-    port = 5050     # 포트번호는 5050으로 설정
-    listen = 100    # 최대 클라이언트 연결 수는 100대
+    port = 5050
+    listen = 100
 
     # 봇 서버 동작
     bot = BotServer(port, listen)

@@ -1,3 +1,4 @@
+# 필요한 모듈 임포트
 import pandas as pd
 import tensorflow as tf
 from tensorflow.keras import preprocessing
@@ -11,7 +12,7 @@ data = pd.read_csv(train_file, delimiter=',')
 queries = data['query'].tolist()
 intents = data['intent'].tolist()
 
-from chatbot.utils.Preprocess import Preprocess
+from utils.Preprocess import Preprocess
 p = Preprocess(word2index_dic='../../train_tools/dict/chatbot_dict.bin',
                userdic='../../utils/user_dic.tsv')
 
@@ -26,7 +27,7 @@ for sentence in queries:
 
 # 단어 인덱스 시퀀스 벡터 ○2
 # 단어 시퀀스 벡터 크기
-from chatbot.config.GlobalParams import MAX_SEQ_LEN
+from config.GlobalParams import MAX_SEQ_LEN
 padded_seqs = preprocessing.sequence.pad_sequences(sequences, maxlen=MAX_SEQ_LEN, padding='post')
 
 # (105658, 15)
