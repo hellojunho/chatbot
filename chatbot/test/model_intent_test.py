@@ -1,5 +1,5 @@
-from utils.Preprocess import Preprocess
-from models.intent.IntentModel import IntentModel
+from chatbot.utils.Preprocess import Preprocess
+from chatbot.models.intent.IntentModel import IntentModel
 
 p = Preprocess(word2index_dic='../train_tools/dict/chatbot_dict.bin',
                userdic='../utils/user_dic.tsv')

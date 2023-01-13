@@ -1,6 +1,6 @@
-from config.DatabaseConfig import *
-from utils.Database import Database
-from utils.Preprocess import Preprocess
+from chatbot.config.DatabaseConfig import *
+from chatbot.utils.Database import Database
+from chatbot.utils.Preprocess import Preprocess
 
 # 전처리 객체 생성
 p = Preprocess(word2index_dic='../train_tools/dict/chatbot_dict.bin',
@@ -19,13 +19,13 @@ db.connect()    # 디비 연결
 query = "자장면 주문할게요"
 
 # 의도 파악
-from models.intent.IntentModel import IntentModel
+from chatbot.models.intent.IntentModel import IntentModel
 intent = IntentModel(model_name='../models/intent/intent_model.h5', proprocess=p)
 predict = intent.predict_class(query)
 intent_name = intent.labels[predict]
 
 # 개체명 인식
-from models.ner.NerModel import NerModel
+from chatbot.models.ner.NerModel import NerModel
 ner = NerModel(model_name='../models/ner/ner_model.h5', proprocess=p)
 predicts = ner.predict(query)
 ner_tags = ner.predict_tags(query)
@@ -38,7 +38,7 @@ print("답변 검색에 필요한 NER 태그 : ", ner_tags)
 print("=" * 100)
 
 # 답변 검색
-from utils.FindAnswer import FindAnswer
+from chatbot.utils.FindAnswer import FindAnswer
 
 try:
     f = FindAnswer(db)
