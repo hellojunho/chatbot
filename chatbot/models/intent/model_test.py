@@ -19,7 +19,7 @@ seq = p.get_wordidx_sequence(keywords)
 sequences = [seq]
 
 # 단어 시퀀스 벡터 크기
-from chatbotconfig.GlobalParams import MAX_SEQ_LEN
+from chatbot.config.GlobalParams import MAX_SEQ_LEN
 padded_seqs = preprocessing.sequence.pad_sequences(sequences, maxlen=MAX_SEQ_LEN, padding='post')
 
 predict = model.predict(padded_seqs)
